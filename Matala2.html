@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //הדפסת המספר אם הוא קטן מ532 או גדול מ928
+        var num = prompt("enter a number:");
+        if (num < 532 || num > 928) {
+            console.log("Your number is:", num);
+        } else {
+            console.log("error");
+
+        }
+        //קליטת 2 מספרים ובדיקה אם הם בסדר עולה
+        var num = prompt("enter your first number:");
+        var num1 = prompt("enter your second number:");
+        var num2 = prompt("enter your third number:");
+        if (num < num2 && num2 < num3) {
+            console.log("increasing");
+        }
+        //קליטת 2 מספרים והצגת GROWING אם המס השני גדול מהראשון
+        var num = prompt("enter your first number:");
+        var num1 = prompt("enter your second number:");
+        if (num < num1) {
+            console.log("Growing");
+        }
+        //קליטת מס ובדיקה אם הוא זוגי או אי זוגי והדפסת הודעה בהתאם
+        var num = prompt("enter your number:");
+        console.log((num % 2 == 0) ? "Even" : "Odd");
+
+        //קליטת שני מספרים והצגת הערך הקטן ראשון ולאחריו הגדול
+        var num = prompt("enter your first number:");
+        var num1 = prompt("enter your second number:");
+        if (num > num1) {
+            console.log("The small number is : " + num + "The big number is " + num1);
+        } else {
+            console.log("The small number is : " + num1 + "The big number is " + num);
+        }
+
+        //קליטת מס והצגה חיובי,שלילי או אפס בהתאם אליו
+        var num = prompt("enter your number:");
+        if (num > 0) {
+            console.log("The Number is Positive");
+        } else if (num < 0) {
+            console.log("The Number is Negative");
+        } else {
+            console.log("The Number is Zero");
+        }
+    </script>
+</body>
+
+</html>
