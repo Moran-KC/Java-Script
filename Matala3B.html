@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var matrix = [
+            ["true", "true"],
+            ["true", "false"],
+            ["false", "true"],
+            ["false", "false"]
+        ];
+        //-----------and logic gate----------
+        console.log("AND logic gate")
+        for (var row = 0; row < matrix.length; row++) {
+            for (var col = 0, col2 = 1; col < matrix[row].length - 1; col++) {
+                console.log(` ${matrix[row][col]}, ${matrix[row][col2]} : ${matrix[row][col] && matrix[row][col2]}`);
+
+
+            }
+        }
+        //-----------or logic gate----------
+        console.log("OR logic gate")
+        for (var row = 0; row < matrix.length; row++) {
+            for (var col = 0, col2 = 1; col < matrix[row].length - 1; col++) {
+                console.log(` ${matrix[row][col]}, ${matrix[row][col2]} : ${matrix[row][col] || matrix[row][col2]}`);
+            }
+        }
+
+        //-----------xor logic gate----------
+        console.log("XOR logic gate")
+        for (var row = 0; row < matrix.length; row++) {
+            for (var col = 0, col2 = 1; col < matrix[row].length - 1; col++) {
+                console.log(` ${matrix[row][col]}, ${matrix[row][col2]} : ${matrix[row][col] != matrix[row][col2]}`);
+            }
+        }
+    </script>
+</body>
+
+</html>

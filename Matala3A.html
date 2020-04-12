@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        var max = 0;
+        var max2 = 0;
+        var min = 100000;
+        var sum = 0;
+        //Create an array, and ask from the user to insert 6 numbers to it.
+        //Print the array to the console. 
+
+        for (var i = 0; i < 6; i++) {
+            arr.push(prompt("Enter a number"));
+            arr = arr.map(Number);
+        }
+        console.log(arr);
+        //Search for the biggest and smallest numbers in the array, and print the to the console.
+        //Find the sum of all the elements in the array.
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            if (arr[i] < max)
+                min = arr[i];
+            else
+                max = arr[i];
+
+        }
+        console.log(`the smallest number is : ${min}`);
+        console.log(`the biggest number is : ${max}`);
+        console.log(`the sum if the array is : ${sum}`);
+        //find the second largest element in the array. 
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < max && arr[i] > max2) {
+                max2 = arr[i];
+            }
+        }
+        console.log(`the second biggest number is : ${max2}`);
+        //Separate odd and even integers in separate arrays.
+        var arrOdd = [];
+        var arrEven = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0)
+                arrEven.push(arr[i]);
+            else
+                arrOdd.push(arr[i]);
+        }
+        console.log(arrEven, arrOdd);
+    </script>
+</body>
+
+</html>
