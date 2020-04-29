@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*QUESTION 1*/
+
+        var sec = Number(prompt("enter seconds:"));
+        var counter = Number(prompt("enter counter:"));
+        for (var i = 0; i <= counter; i++) {
+            setTimeout(function() {
+                console.log(`${Math.floor(Math.random() * Math.floor(10))}`);
+            }, sec * 1000)
+        }
+
+        /*QUESTION 2*/
+        var arr = ["John", "Alice", "Paul"];
+        setTimeout(function() {
+            var counter = 0;
+            while (counter < arr.length) {
+                console.log(`${arr[counter]}`);
+                counter++;
+            }
+        }, 4000);
+
+
+        /*QUESTION 3*/
+
+        function sqrtcalc() {
+            var num = Number(prompt("enter a number to find his sqrt:"));
+            return Math.sqrt(num);
+
+        }
+
+        alert(`the number sqrt is: ${sqrtcalc()}`);
+
+        /*QUESTION 4*/
+
+        function retPow() {
+            var num1 = Number(prompt("enter a base number:"));
+            var num2 = Number(prompt("enter the pow."));
+            return Math.pow(num1, num2);
+
+        }
+        alert(`the number sqrt is: ${retPow()}`);
+        /*QUESTION 5*/
+        var nameOfSong = prompt("Enter your song name:");
+        var songLyrics = prompt("Enter the song Lyrics:");
+        console.log(getFirstApparence(songLyrics, nameOfSong));
+
+
+
+        function getFirstApparence(songLyrics, nameOfSong) {
+            return `the fisrt apparence is: ${(songLyrics.indexOf(nameOfSong.toLowerCase()))}`;
+        }
+    </script>
+
+</body>
+
+</html>
