@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="changeB()">Change background to Blue</button>
+
+    <button onclick="changeR()">Change background to Red</button>
+
+    <button onclick="count()">Click On me</button>
+
+    <script>
+        function changeB() {
+            document.body.style.backgroundColor = "Blue";
+        }
+
+        function changeR() {
+            document.body.style.backgroundColor = "Red";
+        }
+        var counter = 0;
+
+        function count() {
+            counter++;
+            alert(`you clicked ${counter} times on the button`);
+        }
+    </script>
+</body>
+
+</html>

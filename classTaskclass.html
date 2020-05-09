@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Computer {
+            constructor(OS, macAddress, IPAddress, country, city) {
+                this.OS = OS;
+                this.macAddress = macAddress;
+                this.IPAddress = IPAddress;
+                this.location = {
+                    country: country,
+                    city: city,
+                };
+                this.isOn = false; //default selection -- not in necessary.
+            }
+
+            turnOn() {
+                this.isOn = true;
+                return `Computer is on: ${this.isOn}`;
+            }
+
+            turnOff() {
+                this.isOn = false;
+                return `Computer is on: ${this.isOn}`;
+            }
+        }
+
+        var comp = new Computer("windows10", "10:180:h90", "11.11.11.11", "israel", "ariel");
+        console.log(comp.turnOn());
+
+
+        class IOT extends Computer {
+            constructor(os, macAddress, IPAddress, country, city, type, isImplemented) {
+                super(os, macAddress, IPAddress, country, city);
+                this.type = type;
+                this.isImplemented = isImplemented;
+            }
+            try () {
+                if (this.isImplemented) return `Device ${this.type} works`;
+                return `Device ${this.type} isn't ready yet`;
+            }
+        }
+        var iot1 = new IOT(
+            "LinuxOS",
+            "00:1A:C2:7B:00:47",
+            "197.168.0.1",
+            "Israel",
+            "Ariel",
+            "Autonous car",
+            false
+        );
+
+        console.log(iot1.try());
+        console.log(iot1.isOn);
+    </script>
+</body>
+
+</html>
