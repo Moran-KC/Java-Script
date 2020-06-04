@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                * {
+                    text-align: center;
+                }
+                
+                .btn {
+                    border-radius: 10px;
+                    text-align: center;
+                    background-color: white;
+                    border-color: #533b3b;
+                    width: 50px;
+                    margin-bottom: 3%;
+                }
+                
+                .topbot {
+                    width: 25%;
+                }
+                
+                #window {
+                    border-radius: 10px;
+                    text-align: right;
+                    background-color: white;
+                    border-color: black;
+                    width: 80%;
+                    margin-bottom: 5%;
+                    padding-top: 17px;
+                }
+                
+                .calculator {
+                    width: 25%;
+                    height: 150%;
+                    text-align: center;
+                    margin: auto;
+                    padding: 25px;
+                    background-color: rgba(189, 52, 52, 0.7);
+                    border-radius: 10px;
+                }
+            </style>
+        </head>
+
+        <body>
+            <div class="calculator">
+                <div class="display">
+                    <input id="window" type="text" />
+                </div>
+                <div class="row">
+                    <input type="button" class="clear btn topbot" value="AC" onclick="ClearBar(value)" />
+                    <input type="button" class="operator btn topbot" value="%" onclick="ShowNum(value)" />
+                    <input type="button" class="operator btn topbot" value="/" onclick="ShowNum(value)" />
+                </div>
+
+                <div class="row">
+                    <input type="button" class="numbers btn" value="7" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn" value="8" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn" value="9" onclick="ShowNum(value)" />
+                    <input type="button" class="operator btn" value="*" onclick="ShowNum(value)" />
+                </div>
+                <div class="row">
+                    <input type="button" class="numbers btn" value="4" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn" value="5" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn" value="6" onclick="ShowNum(value)" />
+                    <input type="button" class="operator btn" value="-" onclick="ShowNum(value)" />
+                </div>
+                <div class="row">
+                    <input type="button" class="AC btn" value="1" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn" value="2" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn" value="3" onclick="ShowNum(value)" />
+                    <input type="button" class="operator btn" value="+" onclick="ShowNum(value)" />
+
+
+                </div>
+                <div class="row">
+                    <input type="button" class="clear btn topbot" value="0" onclick="ShowNum(value)" />
+                    <input type="button" class="numbers btn topbot" value="." onclick="ShowNum(value)" />
+                    <input type="button" class="equal btn topbot" value="=" onclick="ShowNum(value)" />
+                </div>
+
+
+            </div>
+
+            <script>
+                let a;
+                let b;
+                let op;
+
+                function ShowNum(x) {
+                    if (x == "*" || x == "/" || x == "+" || x == "-" || x == '%') {
+                        a = Number(document.getElementById("window").value);
+                        document.getElementById("window").value = "";
+                        op = x;
+                    } else if (x == "=") {
+                        b = Number(document.getElementById("window").value);
+                        calc();
+                    } else {
+                        document.getElementById("window").value += x;
+                    }
+                }
+
+                function calc() {
+                    switch (op) {
+                        case "+":
+                            document.getElementById("window").value = a + b;
+                            break;
+                        case "-":
+                            document.getElementById("window").value = a - b;
+                            break;
+                        case "*":
+                            document.getElementById("window").value = a * b;
+                            break;
+                        case "/":
+                            if (b != 0)
+                                document.getElementById("window").value = a / b;
+                            else
+                                document.getElementById("window").value = "error";
+                            break;
+                        case "%":
+                            if (a != 0)
+                                document.getElementById("window").value = (a / 100) * b;
+                            break;
+
+                    }
+                }
+
+                function ClearBar() {
+                    document.getElementById("window").value = "";
+                }
+            </script>
+        </body>
+
+        </html>
+    </title>
+</head>
+
+<body>
+
+</body>
+
+</html>
